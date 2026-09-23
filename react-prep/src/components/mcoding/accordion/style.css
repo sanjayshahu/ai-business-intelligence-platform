@@ -1,0 +1,18 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.a-c {
+  background-color: aqua;
+  height: 80px;
+}
+.a-t {
+  width: 80%;
+}
+.a-d {
+  width: 100%;
+  background-color: blueviolet;
+}
+.a-a {
+  float: right;
+}

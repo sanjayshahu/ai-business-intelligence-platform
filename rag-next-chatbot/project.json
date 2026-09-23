@@ -1,0 +1,30 @@
+{
+  "name": "rag-next-chatbot",
+  "projectType": "application",
+  "sourceRoot": "app",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "rag-next-chatbot",
+        "command": "next build"
+      },
+      "outputs": ["{projectRoot}/.next"]
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "rag-next-chatbot",
+        "command": "next dev"
+      }
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "rag-next-chatbot",
+        "command": "next start"
+      }
+    }
+  }
+}

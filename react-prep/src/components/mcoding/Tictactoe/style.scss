@@ -1,0 +1,39 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+    gap: 5px;
+    .box {
+      border: 1px solid red;
+      width: 70px;
+      height: 70px;
+      background-color: pink;
+      color: black;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: "40px";
+      transition: background 10s, width 5s;
+      &:hover {
+        background-color: gray;
+        transform: scale(1.5);
+      }
+    }
+  }
+  button {
+    color: red;
+    border-radius:5px;
+    background-color:white;
+    cursor:pointer;
+    &:hover{
+      background-color:gray;
+    }
+  }
+}

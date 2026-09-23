@@ -1,0 +1,111 @@
+.App {
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+  color: #1f2937;
+}
+.App .pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.App .pagination button {
+  padding: 6px 12px;
+  border: 1px solid #2563eb;
+  background: white;
+  color: #2563eb;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.App .pagination button:hover:not(:disabled) {
+  background: #2563eb;
+  color: white;
+}
+.App .pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.App .pagination .page-number {
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.App .pagination .page-number:hover {
+  background: #dbeafe;
+}
+.App .pagination .page-number--active {
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+}
+.App .products-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 16px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+.App .products-container::-webkit-scrollbar {
+  height: 6px;
+}
+.App .products-container::-webkit-scrollbar-thumb {
+  background: #dbeafe;
+  border-radius: 3px;
+}
+
+.product-card {
+  flex: 0 0 160px;
+  text-align: center;
+  margin: 0;
+  font-family: sans-serif;
+}
+.product-card p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+}
+.product-card .product-image-container {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  background: #f8f9fa;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+.product-card .product-image-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.product-card .product-image-container .image-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #e5e7eb 0%, #f3f4f6 50%, #e5e7eb 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+.virtualized-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}/*# sourceMappingURL=pagination.css.map */

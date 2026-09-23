@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "name": "sanjay",
+    "isFolder": true,
+    "children": [
+      {
+        "id": 3,
+        "name": "projects",
+        "isFolder": true,
+        "children": [
+          {
+            "id": 5,
+            "name": "web-app",
+            "isFolder": true,
+            "children": [
+              { "id": 9, "name": "app.js", "isFolder": false },
+              { "id": 10, "name": "index.html", "isFolder": false },
+              {
+                "id": 11,
+                "name": "components",
+                "isFolder": true,
+                "children": [
+                  { "id": 12, "name": "Header.jsx", "isFolder": false },
+                  { "id": 13, "name": "Footer.jsx", "isFolder": false }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 6,
+            "name": "mobile-app",
+            "isFolder": true,
+            "children": [
+              { "id": 14, "name": "MainActivity.java", "isFolder": false },
+              { "id": 15, "name": "AndroidManifest.xml", "isFolder": false }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "documents",
+        "isFolder": true,
+        "children": [
+          {
+            "id": 7,
+            "name": "personal",
+            "isFolder": true,
+            "children": [
+              { "id": 16, "name": "resume.pdf", "isFolder": false },
+              { "id": 17, "name": "coverletter.docx", "isFolder": false }
+            ]
+          },
+          {
+            "id": 8,
+            "name": "work",
+            "isFolder": true,
+            "children": [
+              { "id": 18, "name": "meeting-notes.txt", "isFolder": false },
+              { "id": 19, "name": "project-plan.xlsx", "isFolder": false }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "sanj",
+    "isFolder": false
+  }
+]
