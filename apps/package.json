@@ -1,5 +1,13 @@
 {
   "name": "@org/apps",
   "version": "0.0.1",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@org/costing-unit-cost": "*"
+  },
+  "nx": {
+    "tags": [
+      "type:app"
+    ]
+  }
 }

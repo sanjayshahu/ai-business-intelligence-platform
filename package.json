@@ -48,6 +48,7 @@
     "vitest": "~4.1.0"
   },
   "workspaces": [
+    "libs/*",
     "packages/*",
     "react-prep",
     "apps"

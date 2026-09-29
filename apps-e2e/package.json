@@ -5,6 +5,9 @@
   "nx": {
     "implicitDependencies": [
       "@org/apps"
+    ],
+    "tags": [
+      "type:e2e"
     ]
   }
 }

@@ -22,10 +22,13 @@ export default [
           enforceBuildableLibDependency: true,
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
           depConstraints: [
-            {
-              sourceTag: '*',
-              onlyDependOnLibsWithTags: ['*'],
-            },
+            { sourceTag: 'type:domain',         onlyDependOnLibsWithTags: ['type:domain', 'type:util'] },
+            { sourceTag: 'type:application',    onlyDependOnLibsWithTags: ['type:domain', 'type:util'] },
+            { sourceTag: 'type:infrastructure', onlyDependOnLibsWithTags: ['type:application', 'type:domain', 'type:util'] },
+            { sourceTag: 'type:ui',             onlyDependOnLibsWithTags: ['type:application', 'type:domain', 'type:util'] },
+            { sourceTag: 'type:util',           onlyDependOnLibsWithTags: ['type:util'] },
+            { sourceTag: 'type:app',            onlyDependOnLibsWithTags: ['*'] },
+            { sourceTag: 'type:e2e',            onlyDependOnLibsWithTags: ['*'] },
           ],
         },
       ],
@@ -42,7 +45,6 @@ export default [
       '**/*.cjs',
       '**/*.mjs',
     ],
-    // Override or add rules here
     rules: {},
   },
 ];
