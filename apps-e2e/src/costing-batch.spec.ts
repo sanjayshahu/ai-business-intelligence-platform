@@ -16,6 +16,7 @@ test.describe('batch cost page', () => {
 
     await expect(page.getByTestId('total-batch-cost')).toContainText('25.0000');
     await expect(page.getByTestId('cost-per-unit')).toContainText('2.5000');
+    await expect(page.getByTestId('line-cost-A')).toContainText('25.0000');
     await expect(page.getByTestId('calculation-version')).toHaveText(
       'batch-cost-v1',
     );

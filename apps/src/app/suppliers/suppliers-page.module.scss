@@ -1,0 +1,37 @@
+.notice {
+  margin: 0 0 1rem 0;
+  padding: 0.5rem 0.75rem;
+  background: #f4f4f4;
+  border-left: 3px solid #999;
+  font-size: 0.875rem;
+  color: #444;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 48rem;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.4rem 0.75rem;
+  text-align: left;
+}
+
+.table thead th {
+  border-bottom: 1px solid #999;
+  font-weight: 600;
+}
+
+.table .numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.footer {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: #555;
+}

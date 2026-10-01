@@ -10,36 +10,63 @@ export function BatchCostResultPanel({ result, formatMoney }: Props) {
   return (
     <section className={styles.result} aria-label="Batch cost result">
       <h2>Result</h2>
-      <dl>
-        <dt>Total batch cost</dt>
-        <dd data-testid="total-batch-cost">
-          {formatMoney(result.totalBatchCost.amount)} {result.currency}
-        </dd>
 
-        <dt>Cost per produced unit</dt>
-        <dd data-testid="cost-per-unit">
-          {formatMoney(result.costPerProducedUnit.amount)} {result.currency}
-        </dd>
+      <p className={styles.currency}>
+        Currency: <strong>{result.currency}</strong>
+      </p>
 
-        <dt>Produced units</dt>
-        <dd>{result.producedUnits}</dd>
+      <table className={styles.resultTable}>
+        <thead>
+          <tr>
+            <th scope="col">Material</th>
+            <th scope="col" className={styles.money}>
+              Line cost
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {result.lineCosts.map((lc, i) => (
+            <tr key={i}>
+              <th scope="row">{lc.materialId}</th>
+              <td
+                className={styles.money}
+                data-testid={`line-cost-${lc.materialId}`}
+              >
+                {formatMoney(lc.lineCost.amount)}
+              </td>
+            </tr>
+          ))}
+          <tr className={styles.subtotalRow}>
+            <th scope="row">Subtotal (total batch cost)</th>
+            <td className={styles.money}>
+              <span data-testid="total-batch-cost">
+                {formatMoney(result.totalBatchCost.amount)}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-        <dt>Currency</dt>
-        <dd>{result.currency}</dd>
+      <div className={styles.summaryBlock}>
+        <h3>Per produced unit</h3>
+        <p className={styles.summaryValue}>
+          <span data-testid="cost-per-unit">
+            {formatMoney(result.costPerProducedUnit.amount)}
+          </span>{' '}
+          {result.currency}
+          <span className={styles.summaryNote}>
+            {' '}
+            (produced units: {result.producedUnits})
+          </span>
+        </p>
+      </div>
 
-        <dt>Calculation version</dt>
-        <dd data-testid="calculation-version">{result.calculationVersion}</dd>
-      </dl>
-
-      <h3>Line costs</h3>
-      <ul>
-        {result.lineCosts.map((lc, i) => (
-          <li key={i}>
-            {lc.materialId}: {formatMoney(lc.lineCost.amount)}{' '}
-            {lc.lineCost.currency}
-          </li>
-        ))}
-      </ul>
+      <p className={styles.version}>
+        Calculation version:{' '}
+        <span data-testid="calculation-version">
+          {result.calculationVersion}
+        </span>
+      </p>
 
       <h3>Assumptions</h3>
       <ul>
